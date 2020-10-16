@@ -9,7 +9,7 @@
 <meta name="description" content="一个懒人的blog">
 <meta name="theme-color" content="#000">
 <title>13yes</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1602840347764">
+<link rel="shortcut icon" href="/favicon.ico?v=1602842405832">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -200,7 +200,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">1</span>
+        <span class="site-item-stat-count">2</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -1033,6 +1033,109 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://13yes.github.io/post/cyu-ju-he-han-shu/"" data-c="
+          &lt;p&gt;C++ 程序是一组函数，每个函数又是一组语句。&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h2 id=&#34;c-语句&#34;&gt;C++ 语句&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;// carrots.cpp
+#include &amp;lt;iostream&amp;gt;
+
+int main() {
+	using namespace std;
+	int carrots;
+	carrots = 25;
+	cout &amp;lt;&amp;lt; &amp;quot;I have &amp;quot;;
+	cout &amp;lt;&amp;lt; carrots;
+	cout &amp;lt;&amp;lt; &amp;quot; carrots.&amp;quot;;
+	cout &amp;lt;&amp;lt; endl;
+	carrots = carrots - 1;
+	cout &amp;lt;&amp;lt; &amp;quot;Crunch, crunch. Now I have &amp;quot; &amp;lt;&amp;lt; carrots &amp;lt;&amp;lt; &amp;quot; carrots.&amp;quot; &amp;lt;&amp;lt; endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;声明语句和变量&#34;&gt;声明语句和变量&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;int carrots;&lt;/code&gt;&lt;br&gt;
+指出信息的存储位置和所需的内存空间，在C++中，所有变量都必须声明。&lt;/p&gt;
+&lt;h3 id=&#34;赋值语句&#34;&gt;赋值语句&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;carrots = 25;&lt;/code&gt;&lt;br&gt;
+将值赋予存储单元，可以使用连续赋值运算符。&lt;/p&gt;
+&lt;h2 id=&#34;使用cin输入语句&#34;&gt;使用cin输入语句&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;// getinfo.cpp
+#include&amp;lt;iostream&amp;gt;
+
+int main() {
+	using namespace std;
+	int carrots;
+	cout &amp;lt;&amp;lt; &amp;quot;How many carrots do you have?&amp;quot; &amp;lt;&amp;lt; endl;
+	cin &amp;gt;&amp;gt; carrots;
+	cout &amp;lt;&amp;lt; &amp;quot;Here are 2 more.&amp;quot;;
+	carrots = carrots + 2;
+	cout &amp;lt;&amp;lt; &amp;quot;Now you have &amp;quot; &amp;lt;&amp;lt; carrots &amp;lt;&amp;lt; &amp;quot; carrots.&amp;quot; &amp;lt;&amp;lt; endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;函数&#34;&gt;函数&lt;/h2&gt;
+&lt;p&gt;由于函数是创建C++程序的模块，对C++的OOP定义至关重要，因此必须熟悉它。&lt;br&gt;
+C++的函数分为两种，有返回值和无返回值。&lt;/p&gt;
+&lt;h3 id=&#34;有返回值的函数&#34;&gt;有返回值的函数&lt;/h3&gt;
+&lt;p&gt;有返回值的函数将生成一个值，可赋予变量或者在其他表达式中使用。在使用函数之前，编译器必须知道函数参数类型和返回值类型。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;// sqrt.cpp
+#include &amp;lt;iostream&amp;gt;
+#include &amp;lt;cmath&amp;gt;
+
+int main() {
+    using namespace std;
+    double area;
+    cout &amp;lt;&amp;lt; &amp;quot;Enter the floor area, in square feet, of you home: &amp;quot;;
+    cin &amp;gt;&amp;gt; area;
+    double side;
+    side = sqrt(area);
+    cout &amp;lt;&amp;lt; &amp;quot;That&#39;s the equivalent of a square &amp;quot; &amp;lt;&amp;lt; side &amp;lt;&amp;lt; &amp;quot; feet to the side.&amp;quot; &amp;lt;&amp;lt; endl;
+    cout &amp;lt;&amp;lt; &amp;quot;How fascinating!&amp;quot; &amp;lt;&amp;lt; endl;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;用户定义的函数&#34;&gt;用户定义的函数&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;// ourfunc.cpp
+#include &amp;lt;iostream&amp;gt;
+void simon(int);
+int main() {
+    using namespace std;
+    simon(3);
+    cout &amp;lt;&amp;lt; &amp;quot;Pick an integer: &amp;quot;;
+    int count;
+    cin &amp;gt;&amp;gt; count;
+    simon(count);
+    cout &amp;lt;&amp;lt; &amp;quot;Done!&amp;quot; &amp;lt;&amp;lt; endl;
+    return 0;
+}
+void simon(int n){
+    using namespace std;
+    cout &amp;lt;&amp;lt; &amp;quot;Simon says touch you toes &amp;quot; &amp;lt;&amp;lt; n &amp;lt;&amp;lt; &amp;quot; times.&amp;quot; &amp;lt;&amp;lt; endl;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;用户定义的有返回的函数&#34;&gt;用户定义的有返回的函数&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;// convert.cpp
+#include &amp;lt;iostream&amp;gt;
+int stonetolb(int);
+int main() {
+    using namespace std;
+    cout &amp;lt;&amp;lt; &amp;quot;Enter the weight in stone: &amp;quot;;
+    int stone;
+    cin &amp;gt;&amp;gt; stone;
+    int pounds = stonetolb(stone);
+    cout &amp;lt;&amp;lt; stone &amp;lt;&amp;lt; &amp;quot; stone = &amp;quot;;
+    cout &amp;lt;&amp;lt; pounds &amp;lt;&amp;lt; &amp;quot; pounds.&amp;quot; &amp;lt;&amp;lt; endl;
+    return 0;
+}
+int stonetolb(int sts){
+    return 14 * sts;
+}
+&lt;/code&gt;&lt;/pre&gt;
+">C++语句和函数</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://13yes.github.io/post/kai-shi-xue-xi-c/"" data-c="

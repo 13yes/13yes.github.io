@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://13yes.github.io</id>
     <title>13yes</title>
-    <updated>2020-10-16T09:25:53.276Z</updated>
+    <updated>2020-10-16T10:00:12.341Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://13yes.github.io"/>
     <link rel="self" href="https://13yes.github.io/atom.xml"/>
@@ -10,6 +10,114 @@
     <logo>https://13yes.github.io/images/avatar.png</logo>
     <icon>https://13yes.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 13yes</rights>
+    <entry>
+        <title type="html"><![CDATA[C++语句和函数]]></title>
+        <id>https://13yes.github.io/post/cyu-ju-he-han-shu/</id>
+        <link href="https://13yes.github.io/post/cyu-ju-he-han-shu/">
+        </link>
+        <updated>2020-10-16T09:27:27.000Z</updated>
+        <summary type="html"><![CDATA[<p>C++ 程序是一组函数，每个函数又是一组语句。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>C++ 程序是一组函数，每个函数又是一组语句。</p>
+<!-- more -->
+<h2 id="c-语句">C++ 语句</h2>
+<pre><code class="language-c++">// carrots.cpp
+#include &lt;iostream&gt;
+
+int main() {
+	using namespace std;
+	int carrots;
+	carrots = 25;
+	cout &lt;&lt; &quot;I have &quot;;
+	cout &lt;&lt; carrots;
+	cout &lt;&lt; &quot; carrots.&quot;;
+	cout &lt;&lt; endl;
+	carrots = carrots - 1;
+	cout &lt;&lt; &quot;Crunch, crunch. Now I have &quot; &lt;&lt; carrots &lt;&lt; &quot; carrots.&quot; &lt;&lt; endl;
+	return 0;
+}
+</code></pre>
+<h3 id="声明语句和变量">声明语句和变量</h3>
+<p><code>int carrots;</code><br>
+指出信息的存储位置和所需的内存空间，在C++中，所有变量都必须声明。</p>
+<h3 id="赋值语句">赋值语句</h3>
+<p><code>carrots = 25;</code><br>
+将值赋予存储单元，可以使用连续赋值运算符。</p>
+<h2 id="使用cin输入语句">使用cin输入语句</h2>
+<pre><code class="language-c++">// getinfo.cpp
+#include&lt;iostream&gt;
+
+int main() {
+	using namespace std;
+	int carrots;
+	cout &lt;&lt; &quot;How many carrots do you have?&quot; &lt;&lt; endl;
+	cin &gt;&gt; carrots;
+	cout &lt;&lt; &quot;Here are 2 more.&quot;;
+	carrots = carrots + 2;
+	cout &lt;&lt; &quot;Now you have &quot; &lt;&lt; carrots &lt;&lt; &quot; carrots.&quot; &lt;&lt; endl;
+	return 0;
+}
+</code></pre>
+<h2 id="函数">函数</h2>
+<p>由于函数是创建C++程序的模块，对C++的OOP定义至关重要，因此必须熟悉它。<br>
+C++的函数分为两种，有返回值和无返回值。</p>
+<h3 id="有返回值的函数">有返回值的函数</h3>
+<p>有返回值的函数将生成一个值，可赋予变量或者在其他表达式中使用。在使用函数之前，编译器必须知道函数参数类型和返回值类型。</p>
+<pre><code class="language-c++">// sqrt.cpp
+#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+int main() {
+    using namespace std;
+    double area;
+    cout &lt;&lt; &quot;Enter the floor area, in square feet, of you home: &quot;;
+    cin &gt;&gt; area;
+    double side;
+    side = sqrt(area);
+    cout &lt;&lt; &quot;That's the equivalent of a square &quot; &lt;&lt; side &lt;&lt; &quot; feet to the side.&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;How fascinating!&quot; &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h3 id="用户定义的函数">用户定义的函数</h3>
+<pre><code class="language-c++">// ourfunc.cpp
+#include &lt;iostream&gt;
+void simon(int);
+int main() {
+    using namespace std;
+    simon(3);
+    cout &lt;&lt; &quot;Pick an integer: &quot;;
+    int count;
+    cin &gt;&gt; count;
+    simon(count);
+    cout &lt;&lt; &quot;Done!&quot; &lt;&lt; endl;
+    return 0;
+}
+void simon(int n){
+    using namespace std;
+    cout &lt;&lt; &quot;Simon says touch you toes &quot; &lt;&lt; n &lt;&lt; &quot; times.&quot; &lt;&lt; endl;
+}
+</code></pre>
+<h3 id="用户定义的有返回的函数">用户定义的有返回的函数</h3>
+<pre><code class="language-c++">// convert.cpp
+#include &lt;iostream&gt;
+int stonetolb(int);
+int main() {
+    using namespace std;
+    cout &lt;&lt; &quot;Enter the weight in stone: &quot;;
+    int stone;
+    cin &gt;&gt; stone;
+    int pounds = stonetolb(stone);
+    cout &lt;&lt; stone &lt;&lt; &quot; stone = &quot;;
+    cout &lt;&lt; pounds &lt;&lt; &quot; pounds.&quot; &lt;&lt; endl;
+    return 0;
+}
+int stonetolb(int sts){
+    return 14 * sts;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[开始学习 C++]]></title>
         <id>https://13yes.github.io/post/kai-shi-xue-xi-c/</id>
