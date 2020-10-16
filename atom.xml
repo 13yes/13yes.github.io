@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://13yes.github.io</id>
     <title>13yes</title>
-    <updated>2020-10-16T08:21:50.959Z</updated>
+    <updated>2020-10-16T09:24:10.778Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://13yes.github.io"/>
     <link rel="self" href="https://13yes.github.io/atom.xml"/>
@@ -11,35 +11,63 @@
     <icon>https://13yes.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 13yes</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://13yes.github.io/post/hello-gridea/</id>
-        <link href="https://13yes.github.io/post/hello-gridea/">
+        <title type="html"><![CDATA[开始学习 C++]]></title>
+        <id>https://13yes.github.io/post/kai-shi-xue-xi-c/</id>
+        <link href="https://13yes.github.io/post/kai-shi-xue-xi-c/">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+        <updated>2020-10-16T08:23:46.000Z</updated>
+        <content type="html"><![CDATA[<p>第一段代码，IDE选择了 CLion，学习材料 C++ Primer Plus</p>
+<h2 id="hello-c">Hello C++</h2>
+<pre><code class="language-c++">//myfirst.cpp
+#include &lt;iostream&gt;
+
+int main() {
+    using namespace std;
+    cout &lt;&lt; &quot;Come up and C++ me some time.&quot;;
+    cout &lt;&lt; endl;
+    cout &lt;&lt; &quot;You won't regret it!&quot; &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<ol>
+<li>注释，由前缀//标识</li>
+<li>预处理器编译指令#include</li>
+<li>函数头 int main()</li>
+<li>编译指令 using namespace</li>
+<li>函数体，用 {} 括起来</li>
+<li>使用C++的cout 工具显示消息内容</li>
+<li>结束main()函数的return 语句</li>
+</ol>
+<h2 id="main函数">main()函数</h2>
+<p>去掉修饰后，程序myfirst.cpp 结构如下：</p>
+<pre><code class="language-c++">int main(){
+    statements
+    return 0;
+}
+</code></pre>
+<p>int main() 叫做函数头，花括号{}中间的部分叫做函数体。main()中最后一条语句叫做返回语句return statement，他结束该函数。<br>
+通常，C++ 程序必须包含一个名为main()的函数。</p>
+<h2 id="注释">注释</h2>
+<p>以双斜杠打头//。为读者提供说明，编译器忽略注释。<br>
+/*  */风格的C注释也能够识别。</p>
+<h2 id="预处理器和iostream-文件">预处理器和iostream 文件</h2>
+<p>和C 一样，C++也使用预处理器，该程序在进行主编译之前，对源文件进行处理。<br>
+iostream，典型的预处理器操作：在源代码被编译前，替换或添加文本。</p>
+<h2 id="头文件名">头文件名</h2>
+<p>像iostream这样的文件叫做头文件。C++编译器自带很多头文件，每个头文件都支持一组特定的工具。C语言传统的头文件使用拓展名h，如math.h 。C++对老式C头文件进行了保留而没有拓展名h，cmath。</p>
+<h2 id="命名空间">命名空间</h2>
+<p>如果使用iostream，则应使用命名空间编译指令来使iostream中定义对程序可用：<br>
+<code>using namespace std;</code><br>
+这叫做using编译指令，是C++ 的一项特性，旨在编写大型程序以及将多个厂商的代码组合起来的程序更容易，有助于组织代码。<br>
+<code>std::cout &lt;&lt;&quot;Come up and C++ me some time.&quot;;</code><br>
+使用using编译指令可以不必使用std::前缀。</p>
+<h2 id="使用cout进行c输出">使用cout进行C++输出</h2>
+<p><code>cout&lt;&lt; &quot;Come up and C++ me some time.&quot;;</code><br>
+双引号内容为要打印的消息。</p>
+<h3 id="控制符-endl">控制符 endl</h3>
+<p>endl是特殊的C++符号，表示重启一行。位于命名空间std中。</p>
+<h3 id="换行符">换行符</h3>
+<p>C语言符号\n。</p>
 ]]></content>
     </entry>
 </feed>

@@ -9,7 +9,7 @@
 <meta name="description" content="一个懒人的blog">
 <meta name="theme-color" content="#000">
 <title>13yes</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1602836443013">
+<link rel="shortcut icon" href="/favicon.ico?v=1602840244132">
 <link rel="stylesheet" href="/media/css/pisces.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -259,8 +259,8 @@
     <div class="article-wrapper bg-color">
       <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://13yes.github.io/post/hello-gridea/">
-      Hello Gridea
+    <a class="post-title-link" href="https://13yes.github.io/post/kai-shi-xue-xi-c/">
+      开始学习 C++
     </a>
   </h1>
   <div class="post-meta">
@@ -268,7 +268,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2018-12-12 00:00:00">2018-12-12</span>
+      <span class="publish-time" data-t="2020-10-16 16:23:46">2020-10-16</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -277,8 +277,8 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://13yes.github.io/tag/ZFJCdZESY/">
-        <span>Gridea</span>
+      <a href="https://13yes.github.io/tag/eZMD9haC0/">
+        <span>C++入门</span>
       </a>
       
       
@@ -287,12 +287,12 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2<span class="language" data-lan="minute">分钟</span></span>
+      <span>3<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>298<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>551<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
   </div>
@@ -301,15 +301,11 @@
         
         
           
-            <img src="/post-images/hello-gridea.png" />
           
-          <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-
         
         
         <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://13yes.github.io/post/hello-gridea/" rel="contents">
+          <a class="btn language" data-lan="read-more" href="https://13yes.github.io/post/kai-shi-xue-xi-c/" rel="contents">
             阅读全文 »
           </a>
         </div>
@@ -1120,6 +1116,63 @@
     <div class="result" id="result">
       
       <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://13yes.github.io/post/kai-shi-xue-xi-c/"" data-c="
+          &lt;p&gt;第一段代码，IDE选择了 CLion，学习材料 C++ Primer Plus&lt;/p&gt;
+&lt;h2 id=&#34;hello-c&#34;&gt;Hello C++&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;//myfirst.cpp
+#include &amp;lt;iostream&amp;gt;
+
+int main() {
+    using namespace std;
+    cout &amp;lt;&amp;lt; &amp;quot;Come up and C++ me some time.&amp;quot;;
+    cout &amp;lt;&amp;lt; endl;
+    cout &amp;lt;&amp;lt; &amp;quot;You won&#39;t regret it!&amp;quot; &amp;lt;&amp;lt; endl;
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;注释，由前缀//标识&lt;/li&gt;
+&lt;li&gt;预处理器编译指令#include&lt;/li&gt;
+&lt;li&gt;函数头 int main()&lt;/li&gt;
+&lt;li&gt;编译指令 using namespace&lt;/li&gt;
+&lt;li&gt;函数体，用 {} 括起来&lt;/li&gt;
+&lt;li&gt;使用C++的cout 工具显示消息内容&lt;/li&gt;
+&lt;li&gt;结束main()函数的return 语句&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;main函数&#34;&gt;main()函数&lt;/h2&gt;
+&lt;p&gt;去掉修饰后，程序myfirst.cpp 结构如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;int main(){
+    statements
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;int main() 叫做函数头，花括号{}中间的部分叫做函数体。main()中最后一条语句叫做返回语句return statement，他结束该函数。&lt;br&gt;
+通常，C++ 程序必须包含一个名为main()的函数。&lt;/p&gt;
+&lt;h2 id=&#34;注释&#34;&gt;注释&lt;/h2&gt;
+&lt;p&gt;以双斜杠打头//。为读者提供说明，编译器忽略注释。&lt;br&gt;
+/*  */风格的C注释也能够识别。&lt;/p&gt;
+&lt;h2 id=&#34;预处理器和iostream-文件&#34;&gt;预处理器和iostream 文件&lt;/h2&gt;
+&lt;p&gt;和C 一样，C++也使用预处理器，该程序在进行主编译之前，对源文件进行处理。&lt;br&gt;
+iostream，典型的预处理器操作：在源代码被编译前，替换或添加文本。&lt;/p&gt;
+&lt;h2 id=&#34;头文件名&#34;&gt;头文件名&lt;/h2&gt;
+&lt;p&gt;像iostream这样的文件叫做头文件。C++编译器自带很多头文件，每个头文件都支持一组特定的工具。C语言传统的头文件使用拓展名h，如math.h 。C++对老式C头文件进行了保留而没有拓展名h，cmath。&lt;/p&gt;
+&lt;h2 id=&#34;命名空间&#34;&gt;命名空间&lt;/h2&gt;
+&lt;p&gt;如果使用iostream，则应使用命名空间编译指令来使iostream中定义对程序可用：&lt;br&gt;
+&lt;code&gt;using namespace std;&lt;/code&gt;&lt;br&gt;
+这叫做using编译指令，是C++ 的一项特性，旨在编写大型程序以及将多个厂商的代码组合起来的程序更容易，有助于组织代码。&lt;br&gt;
+&lt;code&gt;std::cout &amp;lt;&amp;lt;&amp;quot;Come up and C++ me some time.&amp;quot;;&lt;/code&gt;&lt;br&gt;
+使用using编译指令可以不必使用std::前缀。&lt;/p&gt;
+&lt;h2 id=&#34;使用cout进行c输出&#34;&gt;使用cout进行C++输出&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;cout&amp;lt;&amp;lt; &amp;quot;Come up and C++ me some time.&amp;quot;;&lt;/code&gt;&lt;br&gt;
+双引号内容为要打印的消息。&lt;/p&gt;
+&lt;h3 id=&#34;控制符-endl&#34;&gt;控制符 endl&lt;/h3&gt;
+&lt;p&gt;endl是特殊的C++符号，表示重启一行。位于命名空间std中。&lt;/p&gt;
+&lt;h3 id=&#34;换行符&#34;&gt;换行符&lt;/h3&gt;
+&lt;p&gt;C语言符号\n。&lt;/p&gt;
+">开始学习 C++</a>
+      </div>
+      
+      <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://13yes.github.io/post/about/"" data-c="
           &lt;blockquote&gt;
 &lt;p&gt;欢迎来到我的小站呀，很高兴遇见你！🤝&lt;/p&gt;
@@ -1129,32 +1182,6 @@
 &lt;h2 id=&#34;兴趣爱好&#34;&gt;⛹ 兴趣爱好&lt;/h2&gt;
 &lt;h2 id=&#34;联系我呀&#34;&gt;📬 联系我呀&lt;/h2&gt;
 ">关于</a>
-      </div>
-      
-      <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://13yes.github.io/post/hello-gridea/"" data-c="
-          &lt;p&gt;👏  欢迎使用 &lt;strong&gt;Gridea&lt;/strong&gt; ！&lt;br&gt;
-✍️  &lt;strong&gt;Gridea&lt;/strong&gt; 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...&lt;/p&gt;
-&lt;!-- more --&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/getgridea/gridea&#34;&gt;Github&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;https://gridea.dev/&#34;&gt;Gridea 主页&lt;/a&gt;&lt;br&gt;
-&lt;a href=&#34;http://fehey.com/&#34;&gt;示例网站&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特性&#34;&gt;特性👇&lt;/h2&gt;
-&lt;p&gt;📝  你可以使用最酷的 &lt;strong&gt;Markdown&lt;/strong&gt; 语法，进行快速创作&lt;/p&gt;
-&lt;p&gt;🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片&lt;/p&gt;
-&lt;p&gt;🏷️  你可以对文章进行标签分组&lt;/p&gt;
-&lt;p&gt;📋  你可以自定义菜单，甚至可以创建外部链接菜单&lt;/p&gt;
-&lt;p&gt;💻  你可以在 &lt;strong&gt;Windows&lt;/strong&gt;，&lt;strong&gt;MacOS&lt;/strong&gt; 或 &lt;strong&gt;Linux&lt;/strong&gt; 设备上使用此客户端&lt;/p&gt;
-&lt;p&gt;🌎  你可以使用 &lt;strong&gt;𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌&lt;/strong&gt; 或 &lt;strong&gt;Coding Pages&lt;/strong&gt; 向世界展示，未来将支持更多平台&lt;/p&gt;
-&lt;p&gt;💬  你可以进行简单的配置，接入 &lt;a href=&#34;https://github.com/gitalk/gitalk&#34;&gt;Gitalk&lt;/a&gt; 或 &lt;a href=&#34;https://github.com/SukkaW/DisqusJS&#34;&gt;DisqusJS&lt;/a&gt; 评论系统&lt;/p&gt;
-&lt;p&gt;🇬🇧  你可以使用&lt;strong&gt;中文简体&lt;/strong&gt;或&lt;strong&gt;英语&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力&lt;/p&gt;
-&lt;p&gt;🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步&lt;/p&gt;
-&lt;p&gt;🌱 当然 &lt;strong&gt;Gridea&lt;/strong&gt; 还很年轻，有很多不足，但请相信，它会不停向前 🏃&lt;/p&gt;
-&lt;p&gt;未来，它一定会成为你离不开的伙伴&lt;/p&gt;
-&lt;p&gt;尽情发挥你的才华吧！&lt;/p&gt;
-&lt;p&gt;😘 Enjoy~&lt;/p&gt;
-">Hello Gridea</a>
       </div>
       
     </div>
