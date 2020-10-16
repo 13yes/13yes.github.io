@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://13yes.github.io</id>
     <title>13yes</title>
-    <updated>2020-10-16T09:24:10.778Z</updated>
+    <updated>2020-10-16T09:25:53.276Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://13yes.github.io"/>
     <link rel="self" href="https://13yes.github.io/atom.xml"/>
@@ -16,7 +16,10 @@
         <link href="https://13yes.github.io/post/kai-shi-xue-xi-c/">
         </link>
         <updated>2020-10-16T08:23:46.000Z</updated>
+        <summary type="html"><![CDATA[<p>第一段代码，IDE选择了 CLion，学习材料 C++ Primer Plus</p>
+]]></summary>
         <content type="html"><![CDATA[<p>第一段代码，IDE选择了 CLion，学习材料 C++ Primer Plus</p>
+<!-- more -->
 <h2 id="hello-c">Hello C++</h2>
 <pre><code class="language-c++">//myfirst.cpp
 #include &lt;iostream&gt;
