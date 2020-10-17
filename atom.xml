@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://13yes.github.io</id>
     <title>13yes</title>
-    <updated>2020-10-16T10:00:12.341Z</updated>
+    <updated>2020-10-17T08:39:24.192Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://13yes.github.io"/>
     <link rel="self" href="https://13yes.github.io/atom.xml"/>
@@ -10,6 +10,339 @@
     <logo>https://13yes.github.io/images/avatar.png</logo>
     <icon>https://13yes.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 13yes</rights>
+    <entry>
+        <title type="html"><![CDATA[C++数据处理]]></title>
+        <id>https://13yes.github.io/post/cppshu-ju-chu-li/</id>
+        <link href="https://13yes.github.io/post/cppshu-ju-chu-li/">
+        </link>
+        <updated>2020-10-17T03:22:16.000Z</updated>
+        <summary type="html"><![CDATA[<p>面向对象的本质是设计并拓展自己的数据类型。内置C++的数据类型分为基本类型和复合类型。基本类型包括整数和浮点数。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>面向对象的本质是设计并拓展自己的数据类型。内置C++的数据类型分为基本类型和复合类型。基本类型包括整数和浮点数。</p>
+<!-- more -->
+<h2 id="简单变量">简单变量</h2>
+<p>首先声明一个变量。声明中使用的类型描述了信息的类型。通过符号来表示其值的变量名。</p>
+<pre><code class="language-c++">int braincount;
+braincount = 5;
+</code></pre>
+<p>这些语句将告诉程序，他正在存储整数，并使用名称braincount来表示该整数的值。</p>
+<h3 id="变量名">变量名</h3>
+<p>使用有一定含义的变量名，通常采用_或者驼峰星命名。</p>
+<ul>
+<li>在名称中只能使用字母、数字和_</li>
+<li>名称的第一个字符不能为数字</li>
+<li>区分大小写</li>
+<li>不能使用C++关键字</li>
+<li>以两个__和大写字母打头的名称被保留给实现使用，以_开头的名称被保留给实现，用于全局标识符。</li>
+<li>对名称长度没有限制，但平台有长度限制</li>
+</ul>
+<h3 id="整型">整型</h3>
+<p>没有小数部分的数字</p>
+<h3 id="整型short-int-long-和-long-long">整型short 、int、 long 和 long long</h3>
+<p>计算机内存由位bit单元组成。C++的short、int、long和long long类型通过使用不同数目的位来存储值。最多能够表示4种不同的整数宽度。</p>
+<pre><code class="language-c++">// limits.cpp
+#include &lt;iostream&gt;
+#include &lt;climits&gt;
+int main() {
+    using namespace std;
+    int n_int = INT_MAX;
+    short n_short = SHRT_MAX;
+    long n_long = LONG_MAX;
+    long long n_llong = LLONG_MAX;
+
+    cout &lt;&lt; &quot;int is &quot; &lt;&lt; sizeof(int) &lt;&lt; &quot; bytes.&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;short is &quot; &lt;&lt; sizeof n_short &lt;&lt; &quot; bytes.&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;long is &quot; &lt;&lt; sizeof n_long &lt;&lt; &quot; bytes.&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;long long is &quot; &lt;&lt; sizeof n_llong &lt;&lt; &quot; bytes.&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;int is &quot; &lt;&lt; sizeof n_int &lt;&lt; &quot; bytes.&quot; &lt;&lt; endl;
+    cout &lt;&lt; endl;
+
+    cout &lt;&lt; &quot;Maximum values:&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;int: &quot;&lt;&lt; n_int &lt;&lt; endl;
+    cout &lt;&lt; &quot;short: &quot;&lt;&lt; n_short &lt;&lt; endl;
+    cout &lt;&lt; &quot;long: &quot;&lt;&lt; n_long &lt;&lt; endl;
+    cout &lt;&lt; &quot;long long: &quot;&lt;&lt; n_llong &lt;&lt; endl;
+
+    cout &lt;&lt; &quot;Minimum int value = &quot; &lt;&lt; INT_MIN &lt;&lt; endl;
+    cout &lt;&lt; &quot;Bits per byte = &quot; &lt;&lt; CHAR_BIT &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>int is 4 bytes.<br>
+short is 2 bytes.<br>
+long is 4 bytes.<br>
+long long is 8 bytes.<br>
+int is 4 bytes.<br>
+Maximum values:<br>
+int: 2147483647<br>
+short: 32767<br>
+long: 2147483647<br>
+long long: 9223372036854775807<br>
+Minimum int value = -2147483648<br>
+Bits per byte = 8</p>
+<h3 id="无符号类型">无符号类型</h3>
+<p>4种整型都存在一种不能存储负数值的无符号变态。如short类型的表示范围-32768到+32767，无符号版本的表示范围为0 到65535.仅当数值不会为负数才应使用无符号类型，如人口等。使用unsigned修饰声明即可。<br>
+<code>unsigned short change;</code></p>
+<pre><code class="language-c++">// exceed.cpp
+#include &lt;iostream&gt;
+#include &lt;climits&gt;
+#define ZERO 0
+
+int main() {
+    using namespace std;
+    short sam = SHRT_MAX;
+    unsigned short sue = sam;
+
+    cout &lt;&lt; &quot;Sam has &quot; &lt;&lt; sam &lt;&lt; &quot; dollars and Sue has &quot; &lt;&lt; sue;
+    cout &lt;&lt; &quot; dollars deposited.&quot; &lt;&lt; endl &lt;&lt; &quot;Add $1 to each account.&quot; &lt;&lt; endl &lt;&lt; &quot;Now &quot;;
+    sam = sam + 1;
+    sue = sue + 1;
+    cout &lt;&lt; &quot;Sam has &quot; &lt;&lt; sam &lt;&lt; &quot; dollars and Sue has &quot; &lt;&lt; sue;
+    cout &lt;&lt; &quot; dollars deposited.\n Poor Sam!&quot; &lt;&lt; endl;
+
+    sam = ZERO;
+    sue = ZERO;
+    cout &lt;&lt; &quot;Sam has &quot; &lt;&lt; sam &lt;&lt; &quot; dollars and Sue has &quot; &lt;&lt; sue;
+    cout &lt;&lt; &quot; dollars deposited.&quot; &lt;&lt; endl &lt;&lt; &quot;Take $1 to each account.&quot; &lt;&lt; endl &lt;&lt; &quot;Now &quot;;
+    sam = sam - 1;
+    sue = sue - 1;
+    cout &lt;&lt; &quot;Sam has &quot; &lt;&lt; sam &lt;&lt; &quot; dollars and Sue has &quot; &lt;&lt; sue;
+    cout &lt;&lt; &quot; dollars deposited.&quot; &lt;&lt; endl &lt;&lt; &quot;Lucky Sue!&quot; &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>Sam has 32767 dollars and Sue has 32767 dollars deposited.<br>
+Add $1 to each account.<br>
+Now Sam has -32768 dollars and Sue has 32768 dollars deposited.<br>
+Poor Sam!<br>
+Sam has 0 dollars and Sue has 0 dollars deposited.<br>
+Take $1 to each account.<br>
+Now Sam has -1 dollars and Sue has 65535 dollars deposited.<br>
+Lucky Sue!</p>
+<h3 id="选择整数类型">选择整数类型</h3>
+<p>int被设计为对目标计算机而言最自然的长度。如果知道变量的整数值可能大于16位整数则应使用long。如果要存储的的值超过20亿，则应使用long long。仅当有大型整数数组时，才用必要使用short，节省内存。如果只需存储一个字节，可以使用char。</p>
+<h3 id="整型字面值">整型字面值</h3>
+<p>二进制、十进制、八进制、十六进制</p>
+<pre><code class="language-c++">// hexoct.cpp
+#include &lt;iostream&gt;
+
+int main() {
+    using namespace std;
+    int chest = 42;
+    int waist = 0x42;
+    int inseam = 042;
+
+    cout &lt;&lt; &quot;Monsieur cuts a striking figure!\n&quot;;
+    cout &lt;&lt; &quot;chest = &quot; &lt;&lt; chest &lt;&lt; &quot; (42 in decimal)\n&quot;;
+    cout &lt;&lt; &quot;waist = &quot; &lt;&lt; waist &lt;&lt; &quot; (0x42 in hex)\n&quot;;
+    cout &lt;&lt; &quot;inseam = &quot; &lt;&lt; inseam &lt;&lt; &quot; (042 in octal)\n&quot;;
+
+    return 0;
+}
+</code></pre>
+<p>chest = 42 (42 in decimal)<br>
+waist = 66 (0x42 in hex)<br>
+inseam = 34 (042 in octal)</p>
+<h3 id="char类型">char类型</h3>
+<p>字符和小整数，专为存储字节而设计。</p>
+<pre><code class="language-c++">// chartype.cpp
+#include &lt;iostream&gt;
+
+int main() {
+    using namespace std;
+    char ch;
+    cout &lt;&lt; &quot;Enter a character: &quot; &lt;&lt; endl;
+    cin &gt;&gt; ch;
+    cout &lt;&lt; &quot;Hola! &quot;;
+    cout &lt;&lt; &quot;Thank you for the &quot; &lt;&lt; ch &lt;&lt; &quot; character.&quot; &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<pre><code class="language-c++">// morechar.cpp
+#include &lt;iostream&gt;
+
+int main() {
+    using namespace std;
+    char ch = 'M';
+    int i = ch;
+    cout &lt;&lt; &quot;The ASCII code for &quot; &lt;&lt; ch &lt;&lt; &quot; is &quot; &lt;&lt; i &lt;&lt; endl;
+
+    cout &lt;&lt; &quot;Add one to the character code:&quot; &lt;&lt; endl;
+    ch = ch + 1;
+    i = ch;
+    cout &lt;&lt; &quot;The ASCII code for &quot; &lt;&lt; ch &lt;&lt; &quot; is &quot; &lt;&lt; i &lt;&lt; endl;
+    cout &lt;&lt; &quot;Displaying char ch using cout.put(ch): &quot;;
+    cout.put(ch);
+    cout.put('!');
+    cout &lt;&lt; endl &lt;&lt; &quot;Done&quot; &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>The ASCII code for M is 77<br>
+Add one to the character code:<br>
+The ASCII code for N is 78<br>
+Displaying char ch using cout.put(ch): N!<br>
+Done</p>
+<h3 id="bool类型">bool类型</h3>
+<p>布尔变量的值可以为true或者false。</p>
+<h2 id="const限定符">const限定符</h2>
+<p>符号名称指出了常量表示的内容。如果程序在多个地方使用同一常量，需要修改该常量时只需修改一个符号定义即可。使用const关键字来修改和声明初始化。<br>
+<code>const int Months = 12;</code><br>
+初始化之后，其值被固定，编译器将不再允许修改该常量的值。常见的作法是将常量的名称首字母大写。还有一种约定是以字母k打头。如kmonths。</p>
+<h2 id="浮点数">浮点数</h2>
+<p>浮点数能够表示带小数部分的数字。<br>
+常规表示法1.1或E表示法2.52e+8。e大小写均可，确保数字以浮点格式存储，即使没有小数点。</p>
+<h3 id="浮点类型">浮点类型</h3>
+<p>float、double和long double。</p>
+<pre><code class="language-c++">// floatnum.cpp
+#include &lt;iostream&gt;
+
+int main() {
+    using namespace std;
+    cout.setf(ios_base::fixed, ios_base::floatfield);
+    float tub = 10.0 / 3.0;
+    double mint = 10.0 / 3.0;
+    const float million = 1.0e6;
+    
+    cout &lt;&lt; &quot;tub = &quot; &lt;&lt; tub;
+    cout &lt;&lt; &quot;, a million tubs = &quot; &lt;&lt; million * tub;
+    cout &lt;&lt; &quot;,\n and ten million tubs = &quot;;
+    cout &lt;&lt; 10 * million * tub &lt;&lt; endl;
+
+    cout &lt;&lt; &quot;mint = &quot; &lt;&lt; mint &lt;&lt; &quot; and a million mints = &quot;;
+    cout &lt;&lt; million * mint &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>tub = 3.333333, a million tubs = 3333333.250000,<br>
+and ten million tubs = 33333332.000000<br>
+mint = 3.333333 and a million mints = 3333333.333333</p>
+<h3 id="浮点常量">浮点常量</h3>
+<p>如果希望常量是float类型，使用f或F后缀，1.13f。对于long double类型使用l或者L，2.2L。</p>
+<h3 id="浮点数的优缺点">浮点数的优缺点</h3>
+<p>优点：可以表示整数之间的值、表示范围大。缺点：运算速度慢、精度低。</p>
+<pre><code class="language-c++">// fltadd.cpp
+#include &lt;iostream&gt;
+
+int main() {
+    using namespace std;
+    float a = 2.34E+22f;
+    float b = a + 1.0f;
+
+    cout &lt;&lt; &quot;a = &quot; &lt;&lt; a &lt;&lt; endl;
+    cout &lt;&lt; &quot;b - a = &quot;&lt;&lt; b - a &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>a = 2.34e+22<br>
+b - a = 0</p>
+<h2 id="算数运算符">算数运算符</h2>
+<p>5种基本算数计算：+ - * 、 %。</p>
+<pre><code class="language-c++">// arith.cpp
+#include &lt;iostream&gt;
+
+int main() {
+    using namespace std;
+    float hats, heads;
+    cout.setf(ios_base::fixed, ios_base::floatfield);
+    cout &lt;&lt; &quot;Enter a number: &quot;;
+    cin &gt;&gt; hats;
+    cout &lt;&lt; &quot;Enter another number: &quot;;
+    cin &gt;&gt; heads;
+    
+    cout &lt;&lt; &quot;hats = &quot; &lt;&lt; hats &lt;&lt; &quot;; heads = &quot; &lt;&lt; heads &lt;&lt; endl;
+    cout &lt;&lt; &quot;hats + heads = &quot; &lt;&lt; hats + heads &lt;&lt; endl;
+    cout &lt;&lt; &quot;hats - heads = &quot; &lt;&lt; hats - heads &lt;&lt; endl;
+    cout &lt;&lt; &quot;hats * heads = &quot; &lt;&lt; hats * heads &lt;&lt; endl;
+    cout &lt;&lt; &quot;hats / heads = &quot; &lt;&lt; hats / heads &lt;&lt; endl;
+    
+    return 0;
+}
+</code></pre>
+<p>Enter a number:50.25<br>
+Enter another number:11.17<br>
+hats = 50.250000; heads = 11.170000<br>
+hats + heads = 61.419998<br>
+hats - heads = 39.080002<br>
+hats * heads = 561.292480<br>
+hats / heads = 4.498657</p>
+<h3 id="运算符的优先级和结合性">运算符的优先级和结合性</h3>
+<p>先乘除后加减</p>
+<h3 id="除法分支">除法分支</h3>
+<p>/的行为取决与操作数的类型。如果两个数都为整数，将执行整除运算。其中一个为浮点数则小数点会被保留，结果为浮点数。</p>
+<pre><code class="language-c++">// divide.cpp
+#include &lt;iostream&gt;
+
+int main() {
+    using namespace std;
+    cout.setf(ios_base::fixed, ios_base::floatfield);
+    cout &lt;&lt; &quot;Integer division: 9/5 = &quot; &lt;&lt; 9 / 5 &lt;&lt; endl;
+    cout &lt;&lt; &quot;Floating-point division: 9.0 / 5.0 =&quot; &lt;&lt; 9.0 / 5.0 &lt;&lt; endl;
+    cout &lt;&lt; &quot;Mixed division: 9.0 / 5 =&quot; &lt;&lt; 9.0 / 5 &lt;&lt; endl;
+    cout &lt;&lt; &quot;Double constants: 1e7/9.0 = &quot; ;
+    cout &lt;&lt; 1.e7 / 9 &lt;&lt; endl;
+    cout &lt;&lt; &quot;float constants: 1e7f/9.0f = &quot; ;
+    cout &lt;&lt; 1.e7f / 9.0f &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>Integer division: 9/5 = 1<br>
+Floating-point division: 9.0 / 5.0 =1.800000<br>
+Mixed division: 9.0 / 5 =1.800000<br>
+Double constants: 1e7/9.0 = 1111111.111111<br>
+float constants: 1e7f/9.0f = 1111111.125000</p>
+<h3 id="求模运算">求模运算</h3>
+<pre><code class="language-c++">// modulus.cpp
+#include &lt;iostream&gt;
+
+int main() {
+    using namespace std;
+    const int Lbs_per_stn = 14;
+    int lbs;
+    cout &lt;&lt; &quot;Enter you weight in ponds: &quot;;
+    cin &gt;&gt; lbs;
+    int stone = lbs / Lbs_per_stn;
+    int pounds = lbs % Lbs_per_stn;
+    cout &lt;&lt; lbs &lt;&lt; &quot;pounds are &quot; &lt;&lt; stone &lt;&lt; &quot; stone, &quot; &lt;&lt; pounds &lt;&lt; &quot; pound(s).\n&quot;;
+    return 0;
+}
+</code></pre>
+<p>Enter you weight in ponds:181<br>
+181pounds are 12 stone, 13 pound(s).</p>
+<h3 id="类型转换">类型转换</h3>
+<ol>
+<li>初始化和赋值进行的转换</li>
+<li>以{}方式初始化时进行的转换</li>
+<li>表达式中的转换</li>
+<li>传递参数时的转换</li>
+<li>强制类型转换</li>
+</ol>
+<pre><code class="language-c++">//  typecast.cpp
+#include &lt;iostream&gt;
+
+int main() {
+    using namespace std;
+    int auks, bats, coots;
+    auks = 19.99 + 11.99;
+
+    bats = (int) 19.99 + (int) 11.99;
+    coots = int (19.99) + int (11.99);
+    cout &lt;&lt; &quot;auks = &quot; &lt;&lt; auks &lt;&lt; &quot;, bats = &quot; &lt;&lt; bats;
+    cout &lt;&lt; &quot;, coots = &quot; &lt;&lt; coots &lt;&lt; endl;
+
+    char ch = 'Z';
+    cout &lt;&lt; &quot;The code for&quot; &lt;&lt; ch &lt;&lt; &quot; is &quot;;
+    cout &lt;&lt; int(ch) &lt;&lt; endl;
+    cout &lt;&lt; &quot;Yes, the code is &quot;;
+    cout &lt;&lt; static_cast&lt;int&gt;(ch) &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p>auks = 31, bats = 30, coots = 30<br>
+The code forZ is 90<br>
+Yes, the code is 90</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[C++语句和函数]]></title>
         <id>https://13yes.github.io/post/cyu-ju-he-han-shu/</id>
